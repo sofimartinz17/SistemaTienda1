@@ -1,0 +1,109 @@
+﻿@model SistemaTienda.Models.Venta
+
+@{
+    ViewData["Title"] = "Registrar Nueva Venta";
+}
+
+<h3 class="text-center">Registrar Nueva Venta</h3>
+<form method="post" asp-action="Create">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Namecliente"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Namecliente" class="form-control" placeholder="Ingrese el nombre del cliente" />
+                    <span asp-validation-for="Namecliente" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="DUI"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="DUI" class="form-control" placeholder="DUI del cliente (00000000-0)" />
+                    <span asp-validation-for="DUI" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Namecarro"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Namecarro" class="form-control" placeholder="Ingrese el nombre del Vehiculo" />
+                    <span asp-validation-for="Namecarro" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="FechaPago"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="FechaPago" type="date" class="form-control" />
+                    <span asp-validation-for="FechaPago" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Monto"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Monto" class="form-control" placeholder="Monto pagado" />
+                    <span asp-validation-for="Monto" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="MetodoPago"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="MetodoPago" class="form-control" placeholder="Ej: Efectivo, Tarjeta" />
+                    <span asp-validation-for="MetodoPago" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="EstadoPago"></label>
+                </div>
+                <div class="col-8">
+                    <select asp-for="EstadoPago" class="form-control">
+                        <option value="true">Pagado</option>
+                        <option value="false">Pendiente</option>
+                    </select>
+                    <span asp-validation-for="EstadoPago" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="row mt-4">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary form-control">Registrar</button>
+                </div>
+                <div class="col-6">
+                    <a asp-action="Index" class="btn btn-secondary form-control">Volver</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

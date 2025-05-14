@@ -1,0 +1,147 @@
+﻿@model SistemaTienda.Models.ViewModels.ProductoVM
+
+@{
+    ViewData["Title"] = "Crear nuevo producto";
+}
+
+<h3 class="text-center">Crear un nuevo Producto</h3>
+
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="col-10 offset-1 mt-4">
+
+            
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Producto.Nombre"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.Nombre" class="form-control" placeholder="Ingrese el nombre del producto" />
+                    <span asp-validation-for="Producto.Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+           
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Producto.Descripcion"></label>
+                </div>
+                <div class="col-8">
+                    <textarea asp-for="Producto.Descripcion" class="form-control" placeholder="Ingrese la descripción del producto"></textarea>
+                    <span asp-validation-for="Producto.Descripcion" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+          
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>Categoría</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(m => m.Producto.CategoriaId, Model.ListaCategorias, "Seleccione una categoría", new { @class = "form-control" })
+                    <span asp-validation-for="Producto.CategoriaId" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+          
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Producto.UrlImagen">Imagen</label>
+                </div>
+                <div class="col-8">
+                    <input type="file" name="archivos" class="form-control" />
+                    <span asp-validation-for="Producto.UrlImagen" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Producto.NumeroPlaca"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.NumeroPlaca" class="form-control" placeholder="Ingrese el número de placa" />
+                    <span asp-validation-for="Producto.NumeroPlaca" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Producto.Precio"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.Precio" class="form-control" placeholder="Ingrese el precio" />
+                    <span asp-validation-for="Producto.Precio" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Producto.Modelo"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.Modelo" class="form-control" placeholder="Ingrese el modelo" />
+                    <span asp-validation-for="Producto.Modelo" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+           
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Producto.Año"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.Año" class="form-control" placeholder="Ingrese el año" />
+                    <span asp-validation-for="Producto.Año" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+           
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Producto.ColorDisponible"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.ColorDisponible" class="form-control" placeholder="Ingrese el color disponible" />
+                    <span asp-validation-for="Producto.ColorDisponible" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+          
+            <div class="row mt-4">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary form-control">Crear</button>
+                </div>
+                <div class="col-6">
+                    <a asp-action="Index" class="btn btn-secondary form-control">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"
+            integrity="sha512-VCEWnpOl7PIhbYMcb64pqGZYez41C2uws/M/mDdGPy+vtEJHd9BqbShE4/VNnnZdr7YCPOjd+CBmYca/7WWWCw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'lists',
+            menubar: 'file edit format'
+        });
+    </script>
+}

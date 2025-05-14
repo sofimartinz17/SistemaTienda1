@@ -1,0 +1,93 @@
+﻿@model SistemaTienda.Models.Clientes
+
+@{
+    ViewData["Title"] = "Crear Nuevo Cliente";
+}
+
+<h3 class="text-center">Crear Nuevo Cliente</h3>
+<form method="post" asp-action="Create">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Nombre"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Nombre" class="form-control" placeholder="Nombre del cliente" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Apellido"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Apellido" class="form-control" placeholder="Apellido del cliente" />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="DUI"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="DUI" class="form-control" placeholder="DUI del cliente (00000000-0)" />
+                    <span asp-validation-for="DUI" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Correo"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Correo" class="form-control" placeholder="Correo del cliente" />
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Telefono"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Telefono" class="form-control" placeholder="Teléfono del cliente"
+                           pattern="[0-9]*" inputmode="numeric" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Estado"></label>
+                </div>
+                <div class="col-8">
+                    <select asp-for="Estado" class="form-control">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="row mt-4">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary form-control">Crear</button>
+                </div>
+                <div class="col-6">
+                    <a asp-action="Index" class="btn btn-secondary form-control">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

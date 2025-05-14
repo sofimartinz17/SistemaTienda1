@@ -1,0 +1,61 @@
+﻿@model SistemaTienda.Models.Pagos
+
+@{
+    ViewData["Title"] = "Editar Pago";
+}
+
+<h3 class="text-center">Editar Pago</h3>
+<form method="post" asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="VentaId">Venta</label>
+                </div>
+                <div class="col-8">
+                    <select asp-for="VentaId" class="form-control" asp-items="ViewBag.ListaVentas">
+                        <option value="">-- Seleccione una venta --</option>
+                    </select>
+                    <span asp-validation-for="VentaId" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="FechaPago"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="FechaPago" class="form-control" type="date" />
+                    <span asp-validation-for="FechaPago" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Monto"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Monto" class="form-control" placeholder="Monto pagado" />
+                    <span asp-validation-for="Monto" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+          
+         
+            <div class="row mt-4">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary form-control">Editar</button>
+                </div>
+                <div class="col-6">
+                    <a asp-action="Index" class="btn btn-secondary form-control">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
