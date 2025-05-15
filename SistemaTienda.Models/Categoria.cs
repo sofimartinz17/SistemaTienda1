@@ -18,7 +18,7 @@ namespace SistemaTienda.Models
         public string Nombre { get; set; }
 
         [Required]
-        [Display(Name ="Ingrese orden ve visualizacion")]
+        [Display(Name ="Ingrese orden ve visualizacion")] //cler
 
         public int Orden { get; set; }
     }
