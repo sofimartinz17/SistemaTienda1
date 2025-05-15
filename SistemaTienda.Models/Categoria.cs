@@ -10,7 +10,7 @@ namespace SistemaTienda.Models
     public class Categoria
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; }//cual
 
         [Required(ErrorMessage = "El nombre de la categoria es requerido")]
         [Display(Name = "Nombre de CAtegoria")]
