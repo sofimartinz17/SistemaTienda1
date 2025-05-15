@@ -17,7 +17,7 @@ namespace SistemaTienda.Models
         [Required(ErrorMessage = "La venta es obligatoria")]
         [Display(Name = "ID Venta")]
         public int VentaId { get; set; }
-
+        //nob 
         [ForeignKey("VentaId")]
        
 
